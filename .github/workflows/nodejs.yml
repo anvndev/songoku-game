@@ -1,0 +1,32 @@
+name: Static Web Project CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install HTML/CSS/JS linters and configs
+        run: |
+          npm install -g htmlhint stylelint eslint stylelint-config-standard
+
+      - name: Lint HTML
+        run: htmlhint "**/*.html"
+
+      - name: Lint CSS
+        run: stylelint "**/*.css"
+
+      - name: Lint JavaScript
+        run: eslint --no-error-on-unmatched-pattern "**/*.js" 

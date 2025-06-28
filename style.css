@@ -1,0 +1,775 @@
+/* General */
+
+body
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 92%;
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    overflow: hidden;
+}
+
+section
+{
+    display: flex;
+    align-items: center;
+}
+
+#c
+{
+    position: absolute;
+    right: 10px;
+    bottom: -30px;
+    font-size: 12px;
+    font-family: Comic Sans MS;
+    font-style: italic;
+    color: rgb(133, 166, 187);
+    z-index: 2;
+}
+
+::selection
+{
+    background: none;
+}
+
+/* Game */
+
+#game_page
+{
+    display: block;
+}
+
+#terrain
+{
+    width: 100%;
+    z-index: -1;
+}
+
+.avatar
+{
+    position: absolute;
+    width: 100px;
+    top: 0;
+    border: 5px outset rgb(30, 50, 50);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+#avatargoku
+{
+    left: 0;
+}
+#avatarjiren
+{
+    right: 0;
+}
+
+.barre_de_vie
+{
+    position: absolute;
+    top: 25px;
+    width: 30%;
+    height: 40px;
+    background: #2e2e2e;
+    border: 2px outset rgb(50,50,50);
+    z-index: 0;
+}
+
+#barre_de_vie_goku
+{
+    left: 100px;
+    transform: skewX(25deg);
+}
+
+#barre_de_vie_jiren
+{
+    right: 100px;
+    transform: skewX(-25deg);
+}
+
+.vie_restante
+{
+    width: 100%;
+    height: 100%;
+    background: #0ba710;
+}
+
+#vie_restante_jiren
+{
+    position: absolute;
+    right: 0;
+}
+
+.barre_d_energie
+{
+    position: absolute;
+    top: 75px;
+    width: 20%;
+    height: 10px;
+    background: #2e2e2e;
+    border: 2px outset rgb(50,50,50);
+    z-index: 0;
+}
+
+#barre_d_energie_goku
+{
+    left: 100px;
+    transform: skewX(-40deg);
+}
+
+#barre_d_energie_jiren
+{
+    right: 100px;
+    transform: skewX(40deg);
+}
+
+.energie_restante
+{
+    width: 100%;
+    height: 100%;
+    background: #1b5ea0;
+}
+
+#energie_restante_goku
+{
+    border-radius: 0 2px 2px 0;
+}
+
+#energie_restante_jiren
+{
+    position: absolute;
+    right: 0;
+    border-radius: 2px 0 0 2px;
+}
+
+#goku, #jiren
+{
+    position: absolute;
+    bottom: 0;
+    max-height: 200px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+#goku img, #jiren img
+{
+    display: none;
+}
+
+#goku
+{
+    left: 0px;
+}
+
+#jiren
+{
+    left: 870px;
+}
+
+.p
+{
+    position: absolute;
+    opacity: 0;
+    z-index: 1;
+}
+
+.a
+{
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+/* Intro */
+
+#intro_page
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 110%;
+    background: #101010;
+    z-index: 2;
+}
+
+#intro_page div
+{
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
+
+#intro_page div svg
+{
+    width: 250px;
+    margin: auto;
+}
+
+@keyframes intro {
+    0%
+    {
+        opacity: 0;
+    }
+    35%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+    }
+}
+
+#intro_1
+{
+    animation: intro 7s;
+}
+
+#intro_2
+{
+    animation: intro 5s 7s;
+}
+
+#intro_3
+{
+    animation: intro 5s 12s;
+}
+
+#intro_4
+{
+    animation: intro 5s 17s;
+}
+
+/* Menu & Win*/
+
+#menu_page, #win_page
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 110%;
+    background: #101010f4;
+    z-index: 1;
+}
+
+ul
+{
+    list-style-type: none;
+    padding: 0;
+    width: 50%;
+    margin: auto;
+    background: #05050588;
+    border: 3px double #0ba710;
+}
+
+#menu_page h1
+{
+    color: silver;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 120px;
+    font-style: italic;
+    text-align: center;
+    text-shadow: 10px 0 15px #0ba710;
+    display: inline-block;
+    width: 50%;
+    /* margin-top: 15%; */
+    vertical-align: top;
+}
+
+#menu_page div
+{
+    display: inline-block;
+    width: 45%;
+    vertical-align: top;
+    /* margin-top: 15%; */
+}
+
+#menu_page ul
+{
+    width: 100%;
+}
+
+.underlined
+{
+    text-decoration: underline;
+}
+
+#synopsis_text
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    text-align: justify;
+    color: silver;
+    margin-top: 15%;
+}
+
+#win_page div
+{
+    width: 100%;
+}
+
+#win_page h2
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    text-shadow: 10px 0 15px #0ba710;
+    color: rgba(192, 192, 192, 0.959);
+    transform: skewX(-30deg);
+    width: 100%;
+    overflow: hidden;
+}
+
+@keyframes winning {
+    0%
+    {
+        margin-left: 100%;
+    }
+    100%
+    {
+        margin-left: 0%;
+    }
+}
+
+ul li
+{
+    text-align: center;
+    padding: 10px 0;
+    margin: 5px 0;
+    width: 100%;
+    background: #101010;
+}
+
+ul li button
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    width: 100%;
+    overflow: hidden;
+    color: silver;
+    background: transparent;
+    border: none;
+    margin: 0;
+}
+
+ul li:hover
+{
+    transform: skewX(-30deg) translate(-50px);
+    border-left: 50px double #0ba710;
+    border-right: 50px double #0ba710;
+    box-shadow: 0 0 5px #0ba710;
+    transition: border 0.2s;
+}
+
+ul li:hover ul
+{
+    background: none;
+}
+
+#menu_page ul li:hover
+{
+    transform: skew(-30deg) translate(-80px);
+}
+
+ul li:hover button
+{
+    cursor: pointer;
+    transform: skewX(30deg);
+    text-shadow: 0 0 15px #0ba710;
+}
+
+/* Command */
+
+#command_page
+{
+    position: absolute;
+    left: -100%;
+    top: 0;
+    min-width: 100%;
+    min-height: 110%;
+    background: #1010109a;
+    z-index: 2;
+}
+
+#all_command
+{
+    width: 75%;
+    padding: 20px 0;
+    margin: auto;
+    background: #050505df;
+    color: silver;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+/* #command_page_0
+{
+    margin: 120px 0;
+} */
+
+#command_page h1
+{
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 0 0 15px #0ba710;
+    width: 100%;
+    margin: 20px 0;
+}
+
+#command_page h2
+{
+    font-size: 30px;
+    margin: 10px;
+    text-align: center;
+}
+
+#command_page table
+{
+    text-align: left;
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    background: #101010;
+    border: 3px double #0ba710;
+}
+
+#command_page td
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.key_icon
+{
+    padding: 10px;
+    background: black;
+    border: 1px outset rgb(26, 26, 26);
+    border-radius: 5px;
+}
+
+#command_page p
+{
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#hide_command_button, .switch_page_button
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    width: 50%;
+    color: #707070;
+    background: #080808;
+    border-top: 3px solid #104010;
+    border-bottom: 3px solid #102010;
+    border-left: 3px solid #101010;
+    border-right: 3px solid #101010;
+    padding: 5px 0;
+    margin: 0;
+}
+
+#hide_command_button:hover, .switch_page_button:hover
+{
+    cursor: pointer;
+    color: silver;
+    text-shadow: 0 0 15px #0ba710;
+    box-shadow: 0 0 5px #0ba710;
+}
+
+.switch_page_button
+{
+    width: 10%;
+    margin: 0 20px;
+}
+
+/* Ready & Fight texts */
+
+#ready_game_page
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 110%;
+    background: #080808bb;
+    z-index: 1;
+}
+
+#ready_text, #fight_text
+{
+    position: absolute;
+    left: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100px;
+    text-align: center;
+    text-shadow: 0 0 15px #0ba710;
+    color: rgba(192, 192, 192, 0.959);
+    transform: skewX(-30deg);
+    width: 100%;
+    overflow: hidden;
+}
+
+@keyframes ready_text_animation {
+    0%
+    {
+        left: 100%;
+    }
+    15%
+    {
+        left: 0;
+    }
+    90%
+    {
+        left: 0;
+    }
+    100%
+    {
+        left: -100%;
+    }
+}
+
+@keyframes fight_text_animation {
+    0%
+    {
+        left: 100%;
+    }
+    15%
+    {
+        left: 0;
+    }
+    90%
+    {
+        left: 0;
+    }
+    100%
+    {
+        left: -100%;
+    }
+}
+
+/* Setting game */
+
+#setting_game_page
+{
+    position: absolute;
+    left: 0;
+    top: -130%;
+    min-width: 100%;
+    min-height: 110%;
+    background: #1010109a;
+    z-index: 2;
+}
+
+#setting_game_page div
+{
+    width: 75%;
+    padding: 20px 0;
+    margin: auto;
+    background: #050505df;
+    color: silver;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+}
+
+#setting_game_page h2
+{
+    font-size: 50px;
+    text-align: center;
+    text-shadow: 0 0 15px #0ba710;
+    width: 100%;
+    margin: 20px 0;
+}
+
+#setting_game_page p
+{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#perso_list
+{
+    background: #0c0c0c;
+    padding: 5px;
+    text-align: justify;
+}
+
+#setting_game_page input[type=checkbox]
+{
+    display: none;
+}
+
+#setting_game_page label
+{
+    color: silver;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    background: transparent;
+    width: 100%;
+    display: inline-block;
+}
+
+#setting_game_page li:hover label
+{
+    text-shadow: 0 0 15px #0ba710;
+    transform: skewX(30deg);
+}
+
+#setting_game_page label:hover
+{
+    cursor: pointer;
+}
+
+#return_game_button, #play_game_button
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    width: 30%;
+    color: #707070;
+    background: #080808;
+    border-top: 3px solid #104010;
+    border-bottom: 3px solid #102010;
+    border-left: 3px solid #101010;
+    border-right: 3px solid #101010;
+    padding: 5px 0;
+    margin: 0 10px;
+}
+
+#return_game_button:hover, #play_game_button:hover
+{
+    cursor: pointer;
+    color: silver;
+    text-shadow: 0 0 15px #0ba710;
+    box-shadow: 0 0 5px #0ba710;
+}
+
+#control_note_text
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: silver;
+    margin-top: 15%;
+}
+
+@media screen and (min-width: 1025px) {
+    #menu_page
+    {
+        display: block;
+    }
+    
+    #menu_page h1
+    {
+        width: 100%;
+    }
+
+    #menu_page div
+    {
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    #menu_page ul
+    {
+        width: 50%;
+        margin: 0 2% 0 5%;
+    }
+
+    #synopsis_text
+    {
+        margin: 0 20px;
+        padding: 10px;
+        width: 40%;
+        margin: 0 5% 0 2%;
+    }
+
+}
+
+@media screen and (min-width: 1281px) {
+    #c
+    {
+        font-size: 17px;
+    }
+
+    #menu_page h1
+    {
+        font-size: 170px;
+    }
+
+    #menu_page div
+    {
+        display: block;
+        width: 50%;
+        margin: auto;
+    }
+
+    #menu_page ul
+    {
+        width: 100%;
+        margin: 0;
+    }
+
+    #synopsis_text
+    {
+        font-size: 20px;
+        padding: 0;
+        width: 100%;
+        margin: 40px 0;
+    }
+
+}
+
+@media screen and (max-width: 1023px) {
+    section, header, div, footer
+    {
+        display: none;
+    }
+
+    body::after
+    {
+        content: "Sorry! The width of the window must be 1024px or more. Please use a computer, and if it is already, resize the window or decrease the tab zoom.";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 50px solid transparent;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: silver;
+        text-align: justify;
+    }
+
+}
+
+@media screen and (max-height: 511px) {
+    section, header, div, footer, #menu_page
+    {
+        display: none;
+    }
+
+    body::after
+    {
+        content: "Sorry! The height of the window must be 512px or more. Please use a computer, and if it is already, resize the window or decrease the tab zoom.";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 50px solid transparent;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        color: silver;
+        text-align: justify;
+    }
+
+}
