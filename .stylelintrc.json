@@ -6,6 +6,8 @@
     "selector-id-pattern": null,
     "selector-class-pattern": null,
     "color-function-notation": null,
+    "color-function-alias-notation": null,
+    "selector-attribute-quotes": null,
     "font-family-no-missing-generic-family-keyword": null,
     "font-family-name-quotes": null,
     "rule-empty-line-before": null,
